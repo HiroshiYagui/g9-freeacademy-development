@@ -1,4 +1,4 @@
-package com.librepre.librepreapp.model;
+package com.freeacademy.freeacademyapp.model;
 
 import java.sql.Timestamp;
 

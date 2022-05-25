@@ -1,4 +1,4 @@
-package com.librepre.librepreapp.model;
+package com.freeacademy.freeacademyapp.model;
 
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;

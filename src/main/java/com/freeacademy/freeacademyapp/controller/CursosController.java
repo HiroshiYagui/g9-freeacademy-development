@@ -1,8 +1,8 @@
-package com.librepre.librepreapp.controller;
-import com.librepre.librepreapp.dto.CursoDto;
-import com.librepre.librepreapp.service.CursoService;
-
+package com.freeacademy.freeacademyapp.controller;
 import java.util.List;
+
+import com.freeacademy.freeacademyapp.dto.CursoDto;
+import com.freeacademy.freeacademyapp.service.CursoService;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.beans.factory.annotation.Autowired;

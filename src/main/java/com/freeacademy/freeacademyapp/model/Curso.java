@@ -1,4 +1,4 @@
-package com.librepre.librepreapp.model;
+package com.freeacademy.freeacademyapp.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

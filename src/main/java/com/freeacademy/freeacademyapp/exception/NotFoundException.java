@@ -1,4 +1,4 @@
-package com.librepre.librepreapp.exception;
+package com.freeacademy.freeacademyapp.exception;
 
 public class NotFoundException extends RuntimeException{
     public NotFoundException(String Message){

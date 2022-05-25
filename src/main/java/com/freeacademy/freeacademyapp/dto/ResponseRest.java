@@ -1,4 +1,4 @@
-package com.librepre.librepreapp.dto;
+package com.freeacademy.freeacademyapp.dto;
 
 import java.util.ArrayList;
 import java.util.HashMap;

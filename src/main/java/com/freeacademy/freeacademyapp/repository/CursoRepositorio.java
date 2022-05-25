@@ -1,8 +1,8 @@
-package com.librepre.librepreapp.repository;
+package com.freeacademy.freeacademyapp.repository;
 
 import org.springframework.stereotype.Repository;
 
-import com.librepre.librepreapp.model.Curso;
+import com.freeacademy.freeacademyapp.model.Curso;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

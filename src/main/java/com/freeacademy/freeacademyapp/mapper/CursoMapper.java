@@ -1,7 +1,7 @@
-package com.librepre.librepreapp.mapper;
+package com.freeacademy.freeacademyapp.mapper;
 
-import com.librepre.librepreapp.dto.CursoDto;
-import com.librepre.librepreapp.model.Curso;
+import com.freeacademy.freeacademyapp.dto.CursoDto;
+import com.freeacademy.freeacademyapp.model.Curso;
 
 import org.mapstruct.Mapper;
 import org.mapstruct.MappingTarget;

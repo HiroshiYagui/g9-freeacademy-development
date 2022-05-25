@@ -1,4 +1,4 @@
-package com.librepre.librepreapp.dto;
+package com.freeacademy.freeacademyapp.dto;
 
 import lombok.Data;
 

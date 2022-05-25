@@ -1,12 +1,12 @@
-package com.librepre.librepreapp.service;
+package com.freeacademy.freeacademyapp.service;
 
 import java.util.List;
 
-import com.librepre.librepreapp.dto.CursoDto;
-import com.librepre.librepreapp.mapper.CursoMapper;
-import com.librepre.librepreapp.model.Curso;
-import com.librepre.librepreapp.repository.CursoRepositorio;
-import com.librepre.librepreapp.exception.NotFoundException;
+import com.freeacademy.freeacademyapp.dto.CursoDto;
+import com.freeacademy.freeacademyapp.exception.NotFoundException;
+import com.freeacademy.freeacademyapp.mapper.CursoMapper;
+import com.freeacademy.freeacademyapp.model.Curso;
+import com.freeacademy.freeacademyapp.repository.CursoRepositorio;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

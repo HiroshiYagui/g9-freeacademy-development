@@ -1,6 +1,4 @@
-package com.librepre.librepreapp.model;
-
-import java.sql.Time;
+package com.freeacademy.freeacademyapp.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -13,18 +11,18 @@ import lombok.Data;
 import static javax.persistence.GenerationType.IDENTITY;
 import static javax.persistence.FetchType.LAZY;
 
-@Data
 @Entity
-public class Tema {
+@Data
+
+public class Material {
     @Id
     @GeneratedValue(strategy = IDENTITY)
-    private Long idTema;
+    private Long idMaterial;
 
     @OneToOne(fetch = LAZY)
-    @JoinColumn(name = "idCurso" , referencedColumnName = "idCurso")
-    private Curso curso;
+    @JoinColumn(name = "idTema" , referencedColumnName = "idTema")
+    private Tema tema;
 
-    private String titulo;
-    private Time duracion;
-    private String tipo;
+    private String tipoMaterial;
+    private String enlace;
 }
