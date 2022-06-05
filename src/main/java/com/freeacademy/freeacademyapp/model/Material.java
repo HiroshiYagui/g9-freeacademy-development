@@ -22,7 +22,7 @@ public class Material {
     @OneToOne(fetch = LAZY)
     @JoinColumn(name = "idTema" , referencedColumnName = "idTema")
     private Tema tema;
-
+    
     private String tipoMaterial;
     private String enlace;
 }

@@ -23,8 +23,10 @@ public class Tema {
     @OneToOne(fetch = LAZY)
     @JoinColumn(name = "idCurso" , referencedColumnName = "idCurso")
     private Curso curso;
-
+    private String imagen_url;
     private String titulo;
     private Time duracion;
     private String tipo;
+
+
 }
