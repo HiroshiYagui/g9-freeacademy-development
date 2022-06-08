@@ -14,5 +14,4 @@ phases:
       - mv target/freeacademyapp-0.0.1-SNAPSHOT.jar freeacademyapp-0.0.1-SNAPSHOT.jar
 artifacts:
   files:
-    - target/freeacademyapp-0.0.1-SNAPSHOT.jar
-    - appspec.yml
+    - freeacademyapp-0.0.1-SNAPSHOT.jar
