@@ -7,5 +7,5 @@ public class CursoDto {
     String nombre;
     String profesor;
     String descripcion;
-
+    String id;
 }
