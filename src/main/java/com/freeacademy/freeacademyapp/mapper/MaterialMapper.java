@@ -17,8 +17,6 @@ public abstract class MaterialMapper {
     @Mapping(target = "imagen_url",source = "tema.imagen_url")
     @Mapping(target = "duracion",expression =  "java(getTime(material))")
     public abstract  MaterialReproDto mapToDto(Material material);
-
-
      Integer getTime(Material material){
         Long time=material.getTema().getDuracion().getTime()/10000;
         return time.intValue();
