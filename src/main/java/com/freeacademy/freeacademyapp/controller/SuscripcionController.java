@@ -34,6 +34,11 @@ public class SuscripcionController {
         return status(HttpStatus.OK).body(suscripcionService.buscarSuscripciones());
     }
 
+    @GetMapping("/usuario/suscripciones/{id}")
+    public ResponseEntity<List<SuscripcionResponse>> ConsultaSuscripcion(@PathVariable Long id){
+        return status(HttpStatus.OK).body(suscripcionService.buscarSuscripcionesporUsuario(id));
+    }
+
     @GetMapping("/suscripciones/{id}")
     public ResponseEntity<SuscripcionResponse> ConsultarporId(@PathVariable Long id){
         return status(HttpStatus.OK).body(suscripcionService.buscarporId(id));

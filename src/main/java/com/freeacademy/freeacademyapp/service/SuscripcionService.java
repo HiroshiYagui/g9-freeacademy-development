@@ -52,6 +52,18 @@ public class SuscripcionService {
         collect(toList());
     }
 
+    @Transactional(readOnly = true)
+    public List<SuscripcionResponse> buscarSuscripcionesporUsuario(Long id) {
+        
+        List<Suscripcion> suscripciones=suscripcionRepositorio.findByusuario_idUsuario(id)
+                                        .orElseThrow(()->new NotFoundException(id.toString()) );
+        
+        return suscripciones.
+        stream().
+        map(suscripcionMapper::mapToDto).
+        collect(toList());
+    }
+
 
     @Transactional(readOnly=true)
     public SuscripcionResponse buscarporId(Long id)
