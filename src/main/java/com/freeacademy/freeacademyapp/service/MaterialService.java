@@ -32,6 +32,16 @@ public class MaterialService {
         collect(toList());
     }
 
+    @Transactional(readOnly = true)
+    public List<MaterialReproDto> buscarMaterialesporidCurso(Long id) {
+        List<Material> materiales=materialRepositorio.findBytema_curso_idCurso(id)
+                                    .orElseThrow(()-> new NotFoundException(id.toString()));
+        return materiales.
+        stream().
+        map(materialMapper::mapToDto).
+        collect(toList());
+    }
+
 
     @Transactional(readOnly=true)
     public MaterialReproDto buscarporId(Long id)

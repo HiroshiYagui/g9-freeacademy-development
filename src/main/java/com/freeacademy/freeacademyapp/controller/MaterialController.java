@@ -34,6 +34,11 @@ public class MaterialController {
         return status(HttpStatus.OK).body(materialService.buscarMateriales());
     }
 
+    @GetMapping("/curso/materials/{id}")
+    public ResponseEntity<List<MaterialReproDto>> ConsultaMaterialporCurso(@PathVariable Long id){
+        return status(HttpStatus.OK).body(materialService.buscarMaterialesporidCurso(id));
+    }
+
     @GetMapping("/materials/{id}")
     public ResponseEntity<MaterialReproDto> ConsultarporId(@PathVariable Long id){
         return status(HttpStatus.OK).body(materialService.buscarporId(id));
