@@ -10,4 +10,5 @@ import org.springframework.stereotype.Repository;
 public interface TemaRepositorio extends JpaRepository<Tema,Long> {
     
     List<Tema> findAllBycurso_idCurso(Long idCurso);
+    void deleteBycurso_idCurso(Long idCurso);
 }

@@ -7,6 +7,8 @@ import com.freeacademy.freeacademyapp.exception.NotFoundException;
 import com.freeacademy.freeacademyapp.mapper.CursoMapper;
 import com.freeacademy.freeacademyapp.model.Curso;
 import com.freeacademy.freeacademyapp.repository.CursoRepositorio;
+import com.freeacademy.freeacademyapp.repository.SuscripcionRepositorio;
+import com.freeacademy.freeacademyapp.repository.TemaRepositorio;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -23,6 +25,10 @@ public class CursoService {
     private  CursoRepositorio cursoRepositorio;
     @Autowired
     private  CursoMapper cursoMapper;
+    @Autowired
+    private TemaRepositorio temaRepositorio;
+    @Autowired
+    private SuscripcionRepositorio suscripcionRepositorio;
 
 
     @Transactional(readOnly = true)
@@ -63,6 +69,8 @@ public class CursoService {
         Curso curso=cursoRepositorio.findById(id)
                     .orElseThrow(() -> new NotFoundException(id.toString()));
         cursoRepositorio.deleteById(id);
+        temaRepositorio.deleteBycurso_idCurso(id);
+        suscripcionRepositorio.deleteBycurso_idCurso(id);
         return cursoMapper.mapToDto(curso);
     }
 }
