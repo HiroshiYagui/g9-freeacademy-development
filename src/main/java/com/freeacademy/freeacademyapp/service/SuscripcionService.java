@@ -116,4 +116,13 @@ public class SuscripcionService {
         
     }
 
+    @Transactional
+    public SuscripcionRequest eliminarSuscripcion(Long id){
+        Suscripcion suscripcion= suscripcionRepositorio.findById(id)
+                                .orElseThrow(()-> new NotFoundException("No se encontro "+id));
+        suscripcionRepositorio.deleteById(id);
+        practicaRepositorio.deleteBysuscripcion_idSuscripcion(id);
+        return suscripcionMapper.mapToDtoRequest(suscripcion);
+    } 
+
 }

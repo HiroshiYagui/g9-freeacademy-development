@@ -1,10 +1,13 @@
 package com.freeacademy.freeacademyapp.mapper;
 
+import com.freeacademy.freeacademyapp.dto.MaterialDto;
 import com.freeacademy.freeacademyapp.dto.MaterialReproDto;
+import com.freeacademy.freeacademyapp.dto.MaterialRequestDto;
 import com.freeacademy.freeacademyapp.model.Material;
 
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
+import org.mapstruct.MappingTarget;
 
 @Mapper(componentModel = "spring")
 public abstract class MaterialMapper {
@@ -21,4 +24,11 @@ public abstract class MaterialMapper {
         Long time=material.getTema().getDuracion().getTime()/10000;
         return time.intValue();
     }
+
+
+    @Mapping(target = "id",source = "idMaterial")
+    @Mapping(target= "nombretema" , source = "tema.titulo") 
+    public abstract  MaterialDto mapToresponseDto(Material material);
+
+    public abstract void UpdateFromDto(MaterialRequestDto materialDto, @MappingTarget Material material);
 }

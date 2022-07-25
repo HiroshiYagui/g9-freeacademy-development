@@ -1,6 +1,6 @@
 package com.freeacademy.freeacademyapp.dto;
 
-import java.sql.Timestamp;
+import java.sql.Date;
 
 import lombok.Data;
 
@@ -14,5 +14,5 @@ public class SuscripcionResponse {
     private String descripcion;
     private String imagen_url;
     private String nombreUsuario;
-    private Timestamp fechaSuscripcion;
+    private Date fecha;
 }

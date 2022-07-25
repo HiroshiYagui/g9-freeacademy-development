@@ -13,4 +13,5 @@ public interface MaterialRepositorio extends JpaRepository<Material,Long> {
     Optional<Material> findById(Long id);
 
     Optional<List<Material>> findBytema_curso_idCurso(Long id);  
+    void deleteBytema_idTema(Long id);
 }

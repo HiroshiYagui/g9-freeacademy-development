@@ -1,7 +1,9 @@
 package com.freeacademy.freeacademyapp.controller;
 import java.util.List;
 
+import com.freeacademy.freeacademyapp.dto.MaterialDto;
 import com.freeacademy.freeacademyapp.dto.MaterialReproDto;
+import com.freeacademy.freeacademyapp.dto.MaterialRequestDto;
 import com.freeacademy.freeacademyapp.service.MaterialService;
 
 import org.springframework.http.ResponseEntity;
@@ -34,15 +36,31 @@ public class MaterialController {
         return status(HttpStatus.OK).body(materialService.buscarMateriales());
     }
 
-    @GetMapping("/curso/materials/{id}")
-    public ResponseEntity<List<MaterialReproDto>> ConsultaMaterialporCurso(@PathVariable Long id){
+    @GetMapping("/material/materials/{id}")
+    public ResponseEntity<List<MaterialReproDto>> ConsultaMaterialporMaterial(@PathVariable Long id){
         return status(HttpStatus.OK).body(materialService.buscarMaterialesporidCurso(id));
     }
 
     @GetMapping("/materials/{id}")
-    public ResponseEntity<MaterialReproDto> ConsultarporId(@PathVariable Long id){
+    public ResponseEntity<MaterialReproDto> ConsultarpormaterialId(@PathVariable Long id){
         return status(HttpStatus.OK).body(materialService.buscarporId(id));
     }
 
-   
+
+    @PostMapping("/materials")
+    public ResponseEntity<String> crear(@RequestBody MaterialRequestDto request){
+        materialService.crear(request);
+        return status(HttpStatus.CREATED).body("Material Creado");
+    }
+
+    @PutMapping("/materials/{id}")
+    public ResponseEntity<String> actualizar(@RequestBody MaterialRequestDto request, @PathVariable long id){
+        materialService.actualizar(request, id);
+        return status(HttpStatus.OK).body("Material Actualizado");
+    }
+
+    @DeleteMapping("/materials/{id}")
+    public ResponseEntity<MaterialDto> eliminar(@PathVariable Long id){
+        return status(HttpStatus.OK).body(materialService.eliminar(id));
+    }
 }

@@ -19,4 +19,6 @@ public interface SuscripcionRepositorio extends JpaRepository<Suscripcion,Long> 
 
     Optional<List<Suscripcion>> findByusuario_idUsuario(Long id);
     void deleteBycurso_idCurso(Long idCurso);
+
+    
 }

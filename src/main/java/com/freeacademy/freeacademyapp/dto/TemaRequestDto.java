@@ -5,11 +5,10 @@ import java.sql.Time;
 import lombok.Data;
 
 @Data
-public class TemaDto {
-    private Long id;
+public class TemaRequestDto {
     private String imagen_url;
     private String titulo;
     private Time duracion;
     private String tipo;
-    private String nombreCurso;
+    private Long idCurso;
 }
