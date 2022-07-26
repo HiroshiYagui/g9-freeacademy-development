@@ -8,6 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 
+import lombok.Builder;
 import lombok.Data;
 
 import static javax.persistence.GenerationType.IDENTITY;
@@ -15,6 +16,7 @@ import static javax.persistence.FetchType.LAZY;
 
 @Data
 @Entity
+@Builder
 public class Tema {
     @Id
     @GeneratedValue(strategy = IDENTITY)
