@@ -58,13 +58,12 @@ public class TemaService {
     public void crear(TemaRequestDto temaRequestDto){
         Curso curso=cursoRepositorio.findById(temaRequestDto.getIdCurso())
                                         .orElseThrow(()-> new NotFoundException("Curso "+temaRequestDto.getIdCurso()+" no encontrado"));
-        Tema tema=Tema.builder()
-                    .curso(curso)
-                    .duracion(temaRequestDto.getDuracion())
-                    .imagen_url(temaRequestDto.getImagen_url())
-                    .tipo(temaRequestDto.getTipo())
-                    .titulo(temaRequestDto.getTitulo())
-                    .build();
+        Tema tema=new Tema();
+            tema.setCurso(curso);
+            tema.setDuracion(temaRequestDto.getDuracion());
+            tema.setImagen_url(temaRequestDto.getImagen_url());
+            tema.setTipo(temaRequestDto.getTipo());
+            tema.setTitulo(temaRequestDto.getTitulo());
         temaRepositorio.save(tema);
     }
 

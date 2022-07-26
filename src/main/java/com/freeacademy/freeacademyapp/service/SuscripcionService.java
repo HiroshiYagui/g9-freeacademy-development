@@ -81,11 +81,10 @@ public class SuscripcionService {
         Curso curso=cursoRepositorio.findById(suscripcionDto.getIdCurso())
                         .orElseThrow(() -> new NotFoundException(suscripcionDto.getIdCurso().toString()));
 
-        Suscripcion suscripcion=Suscripcion.builder()
-                                .curso(curso)
-                                .usuario(usuario)
-                                .fechaSuscripcion(new Timestamp(System.currentTimeMillis()))
-                                .build();
+        Suscripcion suscripcion=new Suscripcion();
+        suscripcion.setCurso(curso);
+        suscripcion.setUsuario(usuario);
+        suscripcion.setFechaSuscripcion(new Timestamp(System.currentTimeMillis()));
         suscripcionRepositorio.save(suscripcion);
 
         List<Tema> listaTemas=temaRepositorio.findAllBycurso_idCurso(suscripcionDto.getIdCurso());

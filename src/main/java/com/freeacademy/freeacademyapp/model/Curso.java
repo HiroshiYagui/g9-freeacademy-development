@@ -11,7 +11,6 @@ import static javax.persistence.GenerationType.IDENTITY;
 
 @Entity
 @Data
-@Builder
 public class Curso {
     @Id
     @GeneratedValue(strategy = IDENTITY)

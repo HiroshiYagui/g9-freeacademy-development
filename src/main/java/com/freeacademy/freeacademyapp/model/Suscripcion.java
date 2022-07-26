@@ -16,7 +16,6 @@ import static javax.persistence.FetchType.LAZY;
 
 @Data
 @Entity
-@Builder
 public class Suscripcion {
     @Id
     @GeneratedValue(strategy = IDENTITY)

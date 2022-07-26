@@ -62,11 +62,10 @@ public class MaterialService {
     public void crear(MaterialRequestDto materialRequestDto){
         Tema tema=temaRepositorio.findById(materialRequestDto.getIdtema())
                                         .orElseThrow(()-> new NotFoundException("Curso "+materialRequestDto.getIdtema()+" no encontrado"));
-        Material material= Material.builder()
-                            .enlace(materialRequestDto.getEnlace())
-                            .tema(tema)
-                            .tipoMaterial(materialRequestDto.getTipoMaterial())
-                            .build();
+        Material material= new Material();
+        material.setEnlace(materialRequestDto.getEnlace());
+        material.setTema(tema);
+        material.setTipoMaterial(materialRequestDto.getTipoMaterial());
         materialRepositorio.save(material);
     }
 

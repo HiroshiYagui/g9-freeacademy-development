@@ -14,7 +14,6 @@ import static javax.persistence.FetchType.LAZY;
 
 @Entity
 @Data
-@Builder
 public class Material {
     @Id
     @GeneratedValue(strategy = IDENTITY)
